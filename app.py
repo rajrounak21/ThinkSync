@@ -3,12 +3,15 @@ from db_connection import get_connection
 from werkzeug.security import generate_password_hash, check_password_hash
 import google.generativeai as genai
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
+load_dotenv() 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'  # Replace with real key
 
 # Configure Gemini
-genai.configure(api_key='AIzaSyB0bNQqpjN-vxVORcwwFhL7DQqttH32RuI')
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 

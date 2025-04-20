@@ -12,7 +12,7 @@ app.secret_key = 'your-secret-key'  # Replace with real key
 
 # Configure Gemini
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.0-flash-thinking-exp-01-21')
 
 
 @app.route("/chatbot")
